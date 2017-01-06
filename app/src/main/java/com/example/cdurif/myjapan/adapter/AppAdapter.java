@@ -36,6 +36,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.AppViewHolder> {
         App app = appList.get(position);
         appViewHolder.name.setText(app.getName());
         appViewHolder.desc.setText(app.getDesc());
+        appViewHolder.img.setImageResource(app.getImg());
 
     }
 
@@ -55,7 +56,7 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.AppViewHolder> {
             super(view);
             name = (TextView)view.findViewById(R.id.app_name);
             desc = (TextView)view.findViewById(R.id.app_desc);
-            //img = (ImageView)view.findViewById(R.id.poi_img);
+            img = (ImageView)view.findViewById(R.id.app_ico);
 
         }
 

@@ -22,7 +22,7 @@ import java.util.List;
 public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHolder> {
 
     private List<Media> mediaList;
-
+    protected OnCellClickListener onCellClickListener;
     public MediaAdapter(List<Media> mediaList){
         this.mediaList = mediaList;
     }
@@ -34,24 +34,40 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
     }
 
     @Override
-    public void onBindViewHolder(final MediaAdapter.MediaViewHolder holder, int position){
-        Media media = mediaList.get(position);
+    public void onBindViewHolder(final MediaAdapter.MediaViewHolder holder, final int position) {
+        final Media media = mediaList.get(position);
         holder.name.setText(media.getName());
         holder.desc.setText(media.getDesc());
         holder.year.setText("" + media.getYear());
         holder.img.setImageResource(media.getImg());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if (onCellClickListener != null) {
+                    onCellClickListener.onClick(media.getName());
+                }
+            }
+        });
+        holder.fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onCellClickListener != null) {
+                    onCellClickListener.onFavClick(media.getName());
+                }
+            }
+        });
         //Glide.with().load(poi.getImg()).into(holder.img);
     }
-
     @Override
     public int getItemCount(){
         return mediaList.size();
     }
 
-    public class MediaViewHolder extends RecyclerView.ViewHolder{
+    public class MediaViewHolder extends RecyclerView.ViewHolder {
 
         public TextView name, desc, year;
-        public ImageView img;
+        public ImageView img, fav;
 
         public MediaViewHolder(View view){
 
@@ -61,19 +77,17 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
             desc = (TextView)view.findViewById(R.id.med_desc);
             year = (TextView)view.findViewById(R.id.med_year);
             img = (ImageView)view.findViewById(R.id.med_img);
-
-            view.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View view){
-
-                    Toast.makeText(view.getContext(), "CLIC", Toast.LENGTH_SHORT).show();
-
-                    view.getContext().startActivity(new Intent(view.getContext(), MediaDetailsActivity.class));
-
-                }
-            });
-
+            fav = (ImageView)view.findViewById(R.id.fav_icon);
         }
+    }
+
+    public void setOnCellClickListener(OnCellClickListener onCellClickListener) {
+        this.onCellClickListener = onCellClickListener;
+    }
+
+    public interface OnCellClickListener {
+        public void onClick(String title);
+        public void onFavClick(String title);
     }
 
 }

@@ -44,8 +44,8 @@ public class Tab3_apps extends Fragment {
 
         List<App> appList = new ArrayList<>();
 
-        appList.add(new App("Kanji", "dictionnaire", 1));
-        appList.add(new App("Dico", "dictionnaire", 1));
+        appList.add(new App("Kanji", "dictionnaire", R.drawable.fav));
+        appList.add(new App("Dico", "dictionnaire", R.drawable.fav));
 
         return appList;
 
