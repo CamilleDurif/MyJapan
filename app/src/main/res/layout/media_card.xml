@@ -56,7 +56,7 @@
                 android:paddingRight="10dp"
                 android:textSize="12dp"/>
 
-            <ImageView
+            <!--ImageView
                 android:id="@+id/fav_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,7 +66,17 @@
                 android:layout_below="@id/med_img"
                 android:scaleType="centerCrop"
                 android:src="@drawable/fav"
-                />
+                /-->
+            
+            <CheckBox
+                android:id="@+id/fav_icon"
+                android:button="@drawable/myfav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:paddingTop="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/med_img"/>
 
 
         </RelativeLayout>

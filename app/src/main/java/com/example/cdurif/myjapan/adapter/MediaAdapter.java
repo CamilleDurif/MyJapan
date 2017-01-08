@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -67,7 +68,8 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
     public class MediaViewHolder extends RecyclerView.ViewHolder {
 
         public TextView name, desc, year;
-        public ImageView img, fav;
+        public ImageView img;
+        public CheckBox fav;
 
         public MediaViewHolder(View view){
 
@@ -77,7 +79,7 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
             desc = (TextView)view.findViewById(R.id.med_desc);
             year = (TextView)view.findViewById(R.id.med_year);
             img = (ImageView)view.findViewById(R.id.med_img);
-            fav = (ImageView)view.findViewById(R.id.fav_icon);
+            fav = (CheckBox)view.findViewById(R.id.fav_icon);
         }
     }
 
