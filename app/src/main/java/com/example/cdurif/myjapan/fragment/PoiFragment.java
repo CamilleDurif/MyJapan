@@ -2,8 +2,6 @@ package com.example.cdurif.myjapan.fragment;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -21,12 +19,12 @@ import java.util.List;
  * Created by cdurif on 06/01/2017.
  */
 
-public class Tab1_poi extends Fragment {
+public class PoiFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
-        View rootView =  inflater.inflate(R.layout.tab1_poi, container, false);
+        View rootView =  inflater.inflate(R.layout.poi_tab, container, false);
 
         RecyclerView recViewPoi = (RecyclerView)rootView.findViewById(R.id.recycler_poi);
         recViewPoi.setHasFixedSize(true);
@@ -47,6 +45,11 @@ public class Tab1_poi extends Fragment {
 
         poiList.add(new Poi("Udon", R.drawable.udon));
         poiList.add(new Poi("Tokyo Tower", R.drawable.tokyo_tower));
+        poiList.add(new Poi("Torii at Fushimi Inari", R.drawable.torii));
+        poiList.add(new Poi("Great Wave by Hokusai", R.drawable.wave));
+        poiList.add(new Poi("Bento", R.drawable.bento));
+        poiList.add(new Poi("Osaka", R.drawable.osaka));
+        poiList.add(new Poi("Shibuya crossing", R.drawable.hachiko));
 
         return poiList;
 
