@@ -8,12 +8,14 @@ public class App {
 
     private String name;
     private String desc;
+    private String url;
     private int img;
 
-    public App(String name, String desc, int img){
+    public App(String name, String desc, int img, String url){
         this.name = name;
         this.desc = desc;
         this.img = img;
+        this.url = url;
     }
 
     public String getDesc() {
@@ -30,6 +32,14 @@ public class App {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public int getImg() {

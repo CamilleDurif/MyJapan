@@ -19,6 +19,7 @@ import java.util.List;
 public class AppAdapter extends RecyclerView.Adapter<AppAdapter.AppViewHolder> {
 
     private List<App> appList;
+    protected OnAppCellClickListener onAppCellClickListener;
 
     public AppAdapter(List<App> appList){
         this.appList = appList;
@@ -33,10 +34,19 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.AppViewHolder> {
     @Override
     public void onBindViewHolder(AppViewHolder appViewHolder, int position){
 
-        App app = appList.get(position);
+        final App app = appList.get(position);
         appViewHolder.name.setText(app.getName());
         appViewHolder.desc.setText(app.getDesc());
         appViewHolder.img.setImageResource(app.getImg());
+
+        appViewHolder.itemView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if (onAppCellClickListener != null) {
+                    onAppCellClickListener.onCellClick(app.getUrl());
+                }
+            }
+        });
 
     }
 
@@ -60,6 +70,14 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.AppViewHolder> {
 
         }
 
+    }
+
+    public void setOnAppCellClickListener(OnAppCellClickListener onAppCellClickListener){
+        this.onAppCellClickListener = onAppCellClickListener;
+    }
+
+    public interface OnAppCellClickListener{
+        public void onCellClick(String url);
     }
 
 }

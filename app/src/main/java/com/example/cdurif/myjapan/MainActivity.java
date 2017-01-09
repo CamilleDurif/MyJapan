@@ -8,9 +8,9 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.cdurif.myjapan.adapter.PagerAdapter;
-import com.example.cdurif.myjapan.fragment.Tab1_poi;
-import com.example.cdurif.myjapan.fragment.Tab2_media;
-import com.example.cdurif.myjapan.fragment.Tab3_apps;
+import com.example.cdurif.myjapan.fragment.PoiFragment;
+import com.example.cdurif.myjapan.fragment.MediaFragment;
+import com.example.cdurif.myjapan.fragment.AppFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         List<Fragment> fragmentList = new ArrayList<>();
-        fragmentList.add(new Tab1_poi());
-        fragmentList.add(new Tab2_media());
-        fragmentList.add(new Tab3_apps());
+        fragmentList.add(new PoiFragment());
+        fragmentList.add(new MediaFragment());
+        fragmentList.add(new AppFragment());
 
         List<String> titleList = new ArrayList<>();
         titleList.add("POI");

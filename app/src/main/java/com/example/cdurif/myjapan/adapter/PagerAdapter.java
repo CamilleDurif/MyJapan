@@ -4,10 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.example.cdurif.myjapan.fragment.Tab1_poi;
-import com.example.cdurif.myjapan.fragment.Tab2_media;
-import com.example.cdurif.myjapan.fragment.Tab3_apps;
-
 import java.util.List;
 
 /**

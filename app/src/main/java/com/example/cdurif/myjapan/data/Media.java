@@ -11,12 +11,17 @@ public class Media {
 
     private int year;
     private int img;
+    private int longDesc;
 
-    public Media(String name, String desc, int year, int img){
+    private boolean fav;
+
+    public Media(String name, String desc, int longDesc, int year, int img){
         this.name = name;
         this.desc = desc;
+        this.longDesc = longDesc;
         this.year = year;
         this.img = img;
+        this.fav = false;
     }
 
     public String getDesc() {
@@ -25,6 +30,14 @@ public class Media {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public int getLongDesc() {
+        return longDesc;
+    }
+
+    public void setLongDesc(String desc) {
+        this.longDesc = longDesc;
     }
 
     public String getName() {
@@ -50,6 +63,15 @@ public class Media {
     public void setYear(int year) {
         this.year = year;
     }
+
+    public boolean isFav() {
+        return fav;
+    }
+
+    public void setFav(boolean fav) {
+        this.fav = fav;
+    }
+
 
 
 

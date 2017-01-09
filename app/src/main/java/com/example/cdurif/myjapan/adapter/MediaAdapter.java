@@ -24,6 +24,7 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
 
     private List<Media> mediaList;
     protected OnCellClickListener onCellClickListener;
+
     public MediaAdapter(List<Media> mediaList){
         this.mediaList = mediaList;
     }
@@ -36,6 +37,7 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
 
     @Override
     public void onBindViewHolder(final MediaAdapter.MediaViewHolder holder, final int position) {
+
         final Media media = mediaList.get(position);
         holder.name.setText(media.getName());
         holder.desc.setText(media.getDesc());
@@ -46,7 +48,7 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
             @Override
             public void onClick(View view){
                 if (onCellClickListener != null) {
-                    onCellClickListener.onClick(media.getName());
+                    onCellClickListener.onClick(media);
                 }
             }
         });
@@ -54,7 +56,7 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
             @Override
             public void onClick(View v) {
                 if (onCellClickListener != null) {
-                    onCellClickListener.onFavClick(media.getName());
+                    onCellClickListener.onFavClick(media);
                 }
             }
         });
@@ -88,8 +90,8 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.MediaViewHol
     }
 
     public interface OnCellClickListener {
-        public void onClick(String title);
-        public void onFavClick(String title);
+        public void onClick(Media media);
+        public void onFavClick(Media media);
     }
 
 }

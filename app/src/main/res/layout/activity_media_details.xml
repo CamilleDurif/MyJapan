@@ -12,16 +12,16 @@
     tools:context="com.example.cdurif.myjapan.MediaDetailsActivity">
 
 
-    <android.support.v7.widget.Toolbar
+    <!--android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_media"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        /-->
 
     <ImageView
         android:id="@+id/med_det_img"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="220dp"/>
 
 
     <TextView
@@ -32,7 +32,7 @@
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
-        android:textSize="15dp"/>
+        android:textSize="@dimen/text_title"/>
 
 
     <TextView
@@ -40,10 +40,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/med_det_name"
-        android:paddingBottom="5dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:textSize="12dp"/>
+        android:textSize="@dimen/text_secondary"/>
 
     <TextView
         android:id="@+id/med_det_year"
@@ -53,7 +52,23 @@
         android:paddingBottom="5dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:textSize="12dp"/>
+        android:textSize="@dimen/text_secondary"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/med_long_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/med_det_desc"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="12dp"/>
+
+    </ScrollView>
 
 
 </LinearLayout>

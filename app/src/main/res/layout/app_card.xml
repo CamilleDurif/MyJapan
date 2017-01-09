@@ -5,39 +5,46 @@
     android:id="@+id/apps_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    vard_view:cardCornerRadius="5dp"
-    android:layout_margin="5dp">
+    >
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/app_ico"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="fitXY"/>
+
         <TextView
             android:id="@+id/app_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:paddingLeft="30dp"
-            android:paddingTop="5dp"
-            android:textSize="14dp"
+            android:paddingTop="16dp"
+            android:textSize="@dimen/text_title"
+            android:layout_toRightOf="@id/app_ico"
+            android:layout_toEndOf="@id/app_ico"
             />
 
         <TextView
             android:id="@+id/app_desc"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="30dp"
-            android:paddingBottom="5dp"
-            android:gravity="center_vertical"
+            android:paddingBottom="16dp"
+            android:textSize="@dimen/text_secondary"
             android:layout_below="@id/app_name"
+            android:layout_toRightOf="@id/app_ico"
+            android:layout_toEndOf="@id/app_ico"
             />
-
-        <ImageView
-            android:id="@+id/app_ico"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/app_name"/>
 
     </RelativeLayout>
 

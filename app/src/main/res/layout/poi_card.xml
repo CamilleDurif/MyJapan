@@ -29,9 +29,10 @@
         <TextView
             android:id="@+id/poi_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_below="@id/poi_img"
-            android:textSize="15dp"/>
+            android:textSize="14sp"
+            android:padding="16dp"/>
 
         </RelativeLayout>
 
