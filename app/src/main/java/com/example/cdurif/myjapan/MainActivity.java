@@ -1,10 +1,12 @@
 package com.example.cdurif.myjapan;
 
+import android.graphics.Color;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import com.example.cdurif.myjapan.adapter.PagerAdapter;
@@ -24,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
         Log.e("MainActivity", "onCreate()");
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar.setTitle("My Japan (私の日本)");
+        toolbar.setTitleTextColor(Color.WHITE);
+
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(new PoiFragment());
         fragmentList.add(new MediaFragment());
@@ -40,5 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
+        getSupportActionBar().hide();
     }
 }

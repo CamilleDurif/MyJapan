@@ -35,6 +35,7 @@ public class AppFragment extends Fragment {
         AppAdapter adapter = new AppAdapter(createAppList());
         adapter.setOnAppCellClickListener(new AppAdapter.OnAppCellClickListener() {
             @Override
+            //http://stackoverflow.com/questions/11609757/how-to-click-on-android-button-then-go-to-google-play-apps
             public void onCellClick(String url) {
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));

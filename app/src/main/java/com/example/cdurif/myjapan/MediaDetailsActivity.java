@@ -17,10 +17,11 @@ public class MediaDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_media_details);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //display the arrow to return home
+        getSupportActionBar().setTitle("My Japan (私の日本)");
         //getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         Bundle bundle = getIntent().getExtras();
-        Toast.makeText(this, bundle.getString("TITLE"), Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, bundle.getString("TITLE"), Toast.LENGTH_LONG).show();
 
         TextView name = (TextView)findViewById(R.id.med_det_name);
         name.setText(bundle.getString("TITLE"));
