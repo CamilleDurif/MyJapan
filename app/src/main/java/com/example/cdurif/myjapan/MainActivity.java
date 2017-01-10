@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
         fragmentList.add(new AppFragment());
 
         List<String> titleList = new ArrayList<>();
-        titleList.add("POI");
-        titleList.add("Media");
-        titleList.add("App");
+        titleList.add("Pictures");
+        titleList.add("Movies");
+        titleList.add("Learning");
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tab_layout);
         ViewPager viewPager = (ViewPager)findViewById(R.id.view_pager);
